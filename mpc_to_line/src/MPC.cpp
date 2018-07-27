@@ -94,6 +94,7 @@ class FG_eval {
 
       // TODO: Setup the rest of the model constraints
       fg[1 + x_start + t] = x1 - (x0 + v0 * CppAD::cos(psi0) * dt);
+      fg[1 + psi_start + t] = vars[psi_start + t] - (psi0 + v0 / Lf * delta * dt);
     }
   }
 };
